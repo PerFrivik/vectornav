@@ -1,0 +1,60 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/per/Workspaces/citolibra_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/anydrive_sdk/anydrive/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_ui/bilateral_ui/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/controller/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/eigen_checks/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/ethercat_device_configurator/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/ethercat_sdk_master/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_comm/mav_msgs/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_comm/mav_planning_msgs/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_trajectory_generation/mav_trajectory_generation/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_trajectory_generation/mav_trajectory_generation_example/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_trajectory_generation/mav_trajectory_generation_ros/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_trajectory_generation/mav_visualization/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/message_logger/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/ethzasl_msf/msf_core/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/ethzasl_msf/msf_timing/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/ethzasl_msf/msf_updates/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/nlopt/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/omav_hovery/omav_hovery_demo/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/omav_hovery/omav_hovery_interface/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/omav_hovery/omav_hovery_quad/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/omav_hovery/omav_hovery_ros/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_ui/omav_local_planner/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_ui/omni_navigation_tools/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/rotors_simulator/rotors_control/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/rotors_simulator/rotors_gazebo_plugins/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/rotors_simulator/rotors_hil_interface/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/rotors_simulator/rotors_joy_interface/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_allocators/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_control_interface/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_control_utils/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_estimators/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_filters/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_mav_controllers/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_module_base/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/mav_control_rw_devel/rw_omav_controllers/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/simulation/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/soem_interface/soem_interface/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/soem_interface/soem/include/**",
+        "/home/per/Workspaces/citolibra_ws/src/tof_tools/tof_normal_estimation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

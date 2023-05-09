@@ -32,6 +32,13 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+# Find Eigen
+find_package(Eigen3 REQUIRED)
+
+# Include Eigen directories
+include_directories(${EIGEN3_INCLUDE_DIR})
+
+
 ###########
 ## Build ##
 ###########

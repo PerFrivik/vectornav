@@ -23,6 +23,10 @@
  *
  */
 
+// Custom CitoLibra
+
+#include <Eigen/Geometry>
+
 #include <cmath>
 #include <iostream>
 
@@ -415,17 +419,33 @@ void fill_imu_message(
 
       msgIMU.orientation = quat_msg;
     } else {
-      msgIMU.orientation.x = q[0];
-      msgIMU.orientation.y = q[1];
-      msgIMU.orientation.z = q[2];
-      msgIMU.orientation.w = q[3];
+      double angle = -M_PI / 2; // -90 degrees in radians
+      Eigen::Quaterniond rotation_q(cos(angle / 2), sin(angle / 2), 0, 0); // (w, x, y, z)
 
-      msgIMU.angular_velocity.x = ar[0];
-      msgIMU.angular_velocity.y = ar[1];
-      msgIMU.angular_velocity.z = ar[2];
-      msgIMU.linear_acceleration.x = al[0];
-      msgIMU.linear_acceleration.y = al[1];
-      msgIMU.linear_acceleration.z = al[2];
+      // Rotate orientation
+      Eigen::Quaterniond current_q(msgIMU.orientation.w, msgIMU.orientation.x, msgIMU.orientation.y, msgIMU.orientation.z);
+      Eigen::Quaterniond rotated_q = rotation_q * current_q;
+      msgIMU.orientation.x = rotated_q.x();
+      msgIMU.orientation.y = rotated_q.y();
+      msgIMU.orientation.z = rotated_q.z();
+      msgIMU.orientation.w = rotated_q.w();
+
+      // Convert quaternion to rotation matrix
+      Eigen::Matrix3d rotation_matrix = rotation_q.toRotationMatrix();
+
+      // Rotate angular velocities
+      Eigen::Vector3d angular_velocity(msgIMU.angular_velocity.x, msgIMU.angular_velocity.y, msgIMU.angular_velocity.z);
+      Eigen::Vector3d rotated_angular_velocity = rotation_matrix * angular_velocity;
+      msgIMU.angular_velocity.x = rotated_angular_velocity.x();
+      msgIMU.angular_velocity.y = rotated_angular_velocity.y();
+      msgIMU.angular_velocity.z = rotated_angular_velocity.z();
+
+      // Rotate linear accelerations
+      Eigen::Vector3d linear_acceleration(msgIMU.linear_acceleration.x, msgIMU.linear_acceleration.y, msgIMU.linear_acceleration.z);
+      Eigen::Vector3d rotated_linear_acceleration = rotation_matrix * linear_acceleration;
+      msgIMU.linear_acceleration.x = rotated_linear_acceleration.x();
+      msgIMU.linear_acceleration.y = rotated_linear_acceleration.y();
+      msgIMU.linear_acceleration.z = rotated_linear_acceleration.z();
     }
     // Covariances pulled from parameters
     msgIMU.angular_velocity_covariance = user_data->angular_vel_covariance;
